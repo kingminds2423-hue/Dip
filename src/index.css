@@ -1,0 +1,108 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer utilities {
+  /* Hide scrollbar for clean UI */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+
+  html,
+  body,
+  #root {
+    height: auto !important;
+    min-height: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Unclip flex / scroll containers across SPA layout during print */
+  .min-h-screen,
+  .h-screen,
+  .flex-1,
+  .min-h-0,
+  .overflow-y-auto,
+  .overflow-x-auto,
+  .overflow-hidden,
+  main {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  /* Hide app navigation and sidebar during printing */
+  header,
+  aside,
+  nav,
+  footer,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Ensure tables fit inside A4/Legal width without right-side cutoff */
+  table {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-collapse: collapse !important;
+    page-break-inside: auto;
+  }
+
+  tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  th,
+  td {
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+
+  /* Ensure printable area takes full width without scrollbars */
+  #printable-joining-letter,
+  #printable-financial-statement,
+  #printable-daily-summary {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Exclusive Print Studio portal mode: hide main SPA root completely so modals/containers never clip */
+  body.print-studio-active #root {
+    display: none !important;
+  }
+
+  body.print-studio-active #print-studio-portal-root {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}

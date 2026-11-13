@@ -1,0 +1,33 @@
+{
+  "id": "/",
+  "name": "DIP BHOLA NETWORK - হিসাব খাতা ও স্টাফ মনিটরিং",
+  "short_name": "DIP BHOLA",
+  "description": "DIP BHOLA NETWORK এর কেন্দ্রীয় দৈনিক আয়-ব্যয় হিসাব, স্টাফ মনিটরিং, গ্রাহক অভিযোগ এবং ক্যাশ বুক পরিচালন ব্যবস্থা।",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#064e3b",
+  "background_color": "#064e3b",
+  "categories": ["business", "finance", "productivity"],
+  "icons": [
+    {
+      "src": "/db-logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/db-logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/db-logo-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

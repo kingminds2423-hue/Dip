@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="emeraldBg" cx="50%" cy="42%" r="68%">
+      <stop offset="0%" stop-color="#0b6e50" />
+      <stop offset="55%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#043729" />
+    </radialGradient>
+    <linearGradient id="goldRing" x1="15%" y1="10%" x2="85%" y2="90%">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="50%" stop-color="#eab308" />
+      <stop offset="100%" stop-color="#ca8a04" />
+    </linearGradient>
+    <filter id="softGlow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#022c22" flood-opacity="0.55" />
+    </filter>
+  </defs>
+
+  <!-- Full-bleed Emerald Base -->
+  <rect width="512" height="512" fill="url(#emeraldBg)" />
+
+  <!-- Subtle Inner Halo -->
+  <circle cx="256" cy="256" r="176" fill="#065f46" fill-opacity="0.32" />
+
+  <!-- Bright Golden-Yellow Circular Ring -->
+  <circle
+    cx="256"
+    cy="256"
+    r="178"
+    fill="none"
+    stroke="url(#goldRing)"
+    stroke-width="22"
+    filter="url(#softGlow)"
+  />
+
+  <!-- Crisp Bold White "DB" Monogram (same 144px cap height y=184..328) -->
+  <g fill="#ffffff" fill-rule="evenodd" filter="url(#softGlow)">
+    <!-- Letter D -->
+    <path d="M134 184h46c42 0 70 27 70 72s-28 72-70 72h-46V184zm26 24v96h22c26 0 42-18 42-48s-16-48-42-48h-22z" />
+    <!-- Letter B -->
+    <path d="M268 184h52c30 0 50 14 50 37 0 16-9 27-23 32 18 5 29 18 29 37 0 25-21 38-53 38h-55V184zm26 22v38h24c15 0 25-7 25-19s-10-19-25-19h-24zm0 58v42h27c17 0 28-8 28-21s-11-21-28-21h-27z" />
+  </g>
+</svg>
